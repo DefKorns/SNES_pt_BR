@@ -1,9 +1,9 @@
 MOD_NAME := Brazilian Custom Language
 MOD_CREATOR := DefKorns
-MOD_CATEGORY := User Interface
+MOD_CATEGORY := UI
 MOD_VER := v1.0
 MOD_URL=`git config --get remote.origin.url`
-GIT_COMMIT := $(shell echo "`git rev-parse --short HEAD``git diff-index --quiet HEAD -- || echo '-dirty'`")
+GIT_COMMIT := $(shell echo "`git rev-parse --short HEAD``git diff-index --quiet HEAD -- || echo '-FINAL'`")
 MOD_FILENAME := $(shell basename ${MOD_URL} .git | cut -d':' -f2)
 
 hmod: out/$(MOD_FILENAME).hmod
@@ -28,4 +28,8 @@ out/$(MOD_FILENAME).hmod:
 	cd temp/; tar -czf "../$@" *
 	rm -r temp/
 	touch "$@"
-	
+
+clean:
+	-rm -rf out/
+
+.PHONY: clean
