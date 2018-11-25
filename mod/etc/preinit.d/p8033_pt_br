@@ -1,0 +1,1 @@
+mount_bind "$rootfs/usr/share/strings" "$mountpoint/usr/share/ui/$sftype-$sfregion/resources/strings"

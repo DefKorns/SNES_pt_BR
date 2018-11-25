@@ -1,0 +1,2 @@
+rm "$rootfs/etc/preinit.d/p8033_pt_br"
+rm -rf "$rootfs/usr/share/strings"
